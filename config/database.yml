@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: jspelunkular_development
+  database: spelunkular_development
   pool: 5
   username: postgres
   password:
