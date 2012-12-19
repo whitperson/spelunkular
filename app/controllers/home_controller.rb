@@ -15,10 +15,15 @@ class HomeController < ApplicationController
   end
 
   def get_links
+    new_urls = []
     @raw_data = HTTParty.get(@url)
     link_regex = /<a .*?['"](http[^'"]*)['"]/m
     urls = @raw_data.scan(link_regex).flatten.uniq
-    # URI.parse(url)
+      urls.each do |link|
+        if !URI.parse(link).relative?
+        new_urls << link
+        end
+      end
     # binding.pry
   end
 
