@@ -1,9 +1,11 @@
 
 #main
-  %h1 SPELUNKULAR HOME PAGE EXISTS
+  %h1 SPELUNKULAR
+  %h2 Add a url to scrape the images from that site. Also, add a depth level and it'll follow the links from that site and scrape the other sites too!
+
   = form_tag '/scraper', :id => 'url', :remote => true do
-    = text_field_tag 'url'
+    = text_field_tag 'url', 'enter a URL to scrape'
     = number_field_tag 'depth', nil, :in => 1...3
-    = submit_tag 'Go', :class=> 'button'
+    = submit_tag 'Get Images', :class => 'button'
 
 #results
